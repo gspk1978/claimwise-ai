@@ -54,12 +54,12 @@ RAG chain → guardrails → structured JSON → Streamlit UI.**
 - Bundled sample policies (auto + homeowners) and sample historical claims
 
 **Bonus:**
-- 🕵️ Fraud risk scoring (heuristic, LLM-based text pattern screening)
-- 🔎 Similar historical claims retrieval (its own Chroma collection)
-- 🤖 Simple multi-agent coordinator pattern (coverage / fraud / historical
+- Fraud risk scoring (heuristic, LLM-based text pattern screening)
+- Similar historical claims retrieval (its own Chroma collection)
+- Simple multi-agent coordinator pattern (coverage / fraud / historical
   agents run and merged by a coordinator)
-- 🔭 LangSmith observability (opt-in via `.env`)
-- 🔒 Basic PII masking of claim text before processing/logging
+- LangSmith observability (opt-in via `.env`)
+- Basic PII masking of claim text before processing/logging
 
 ---
 
