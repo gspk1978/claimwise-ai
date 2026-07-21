@@ -1,0 +1,58 @@
+[
+  {
+    "claim_id": "CLM-1001",
+    "claim_type": "Auto - Weather Damage",
+    "description": "My car was parked in my driveway during a hailstorm on June 12th. The hood, roof, and trunk have multiple dents, and the windshield is cracked. No other vehicles were involved.",
+    "outcome": "Approved",
+    "resolution_notes": "Comprehensive coverage applied; hail damage is a covered peril under comprehensive auto coverage. Deductible applied, repair estimate approved."
+  },
+  {
+    "claim_id": "CLM-1002",
+    "claim_type": "Auto - Collision, Unlicensed Driver",
+    "description": "My teenage son borrowed my car without permission and got into a collision with a parked vehicle. He does not have a driver's license yet.",
+    "outcome": "Denied",
+    "resolution_notes": "Claim denied under the unlicensed/unauthorized driver exclusion clause. Policyholder advised to review named-driver endorsement options."
+  },
+  {
+    "claim_id": "CLM-1003",
+    "claim_type": "Home - Water Damage",
+    "description": "A pipe burst in the upstairs bathroom while we were on vacation, causing water damage to the ceiling and flooring below. We discovered it three days after returning home.",
+    "outcome": "Approved with conditions",
+    "resolution_notes": "Sudden and accidental water discharge is covered; however, mold remediation costs were partially excluded due to delayed discovery. Adjuster requested moisture inspection report."
+  },
+  {
+    "claim_id": "CLM-1004",
+    "claim_type": "Home - Flood",
+    "description": "Heavy rainfall caused a nearby river to overflow, flooding our basement with about two feet of water and damaging furniture and electronics.",
+    "outcome": "Denied",
+    "resolution_notes": "Standard homeowners policy excludes flood/surface water damage; requires separate flood insurance policy (e.g., NFIP). Claim redirected to flood policy if one exists."
+  },
+  {
+    "claim_id": "CLM-1005",
+    "claim_type": "Health - Emergency Room Visit",
+    "description": "I went to the ER after experiencing chest pains. Tests showed it was a false alarm related to acid reflux. The hospital billed $4,800 for the visit.",
+    "outcome": "Approved",
+    "resolution_notes": "Emergency room visits for symptoms suggesting a medical emergency are covered under the prudent layperson standard, regardless of final diagnosis."
+  },
+  {
+    "claim_id": "CLM-1006",
+    "claim_type": "Health - Elective Procedure",
+    "description": "I want to get cosmetic rhinoplasty and am submitting a claim to see if my plan will cover any portion of the procedure.",
+    "outcome": "Denied",
+    "resolution_notes": "Elective cosmetic procedures not related to a covered medical necessity are excluded under the policy's cosmetic surgery exclusion clause."
+  },
+  {
+    "claim_id": "CLM-1007",
+    "claim_type": "Auto - Theft",
+    "description": "My car was stolen from a public parking garage downtown two nights ago. I filed a police report and have the case number. The vehicle has not been recovered.",
+    "outcome": "Approved",
+    "resolution_notes": "Comprehensive coverage includes theft. Police report and comprehensive coverage confirmed; payout based on actual cash value minus deductible."
+  },
+  {
+    "claim_id": "CLM-1008",
+    "claim_type": "Home - Theft/Burglary, Suspicious Pattern",
+    "description": "Someone broke into my home while I was away and stole jewelry I recently appraised at $45,000, but I don't have receipts and there's no police report yet because I wanted to check with insurance first.",
+    "outcome": "Under investigation",
+    "resolution_notes": "Missing police report and lack of proof of ownership for high-value items flagged for further investigation before payout consideration. Policyholder advised to file police report immediately."
+  }
+]

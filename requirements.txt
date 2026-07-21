@@ -1,0 +1,23 @@
+# ClaimWise AI - Python dependencies
+# Tested with Python 3.11 / 3.12
+
+streamlit>=1.58.0
+
+# LangChain core + integrations
+langchain>=1.3.0
+langchain-core>=1.4.0
+langchain-openai>=1.3.0
+langchain-chroma>=1.1.0
+langchain-text-splitters>=1.1.0
+
+# Vector database
+chromadb>=1.5.0
+
+# PDF parsing
+pypdf>=5.9.0
+
+# Env var management
+python-dotenv>=1.0.0
+
+# Used only to generate the bundled sample policy PDFs (scripts/generate_sample_policies.py)
+reportlab>=4.4.0
