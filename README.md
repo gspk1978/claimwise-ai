@@ -10,6 +10,8 @@ RAG chain → guardrails → structured JSON → Streamlit UI.**
 
 > ⚠️ **Please note that this is a demo/portfolio project, not a certified claims system.**
 
+---
+
 ## Additional Documentation
 
 - [Business Overview](./BUSINESS_OVERVIEW.md) — business background, problem statement, and use cases
@@ -27,7 +29,6 @@ RAG chain → guardrails → structured JSON → Streamlit UI.**
 6. [Guardrails](#guardrails)
 7. [Bonus Features](#bonus-features)
 8. [Testing](#testing)
-9. [Design Notes / Interview Talking Points](#design-notes--interview-talking-points)
 
 ---
 
