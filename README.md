@@ -212,10 +212,9 @@ Then open the URL Streamlit prints (typically `http://localhost:8501`).
 3. Review the structured output: coverage assessment, cited clauses,
    exclusions, missing documents, confidence score, and recommendation —
    plus optional fraud-risk screening and similar historical claims.
-4. **Tab "Policy Library"** — see what's currently indexed in ChromaDB and
+4. **Tab "Policy Library"** — This tab contains what is currently indexed in ChromaDB and can
    browse bundled sample claims for quick testing.
-5. **Tab "About / Guardrails"** — explains the safety mechanisms in plain
-   language (useful to show in a demo/interview).
+5. **Tab "About / Guardrails"** — explains the safety mechanisms in this context, i.e. what kind of claim assessment is relavant or not.
 
 ### Try these sample claims (from `data/sample_claims/sample_claims.json`)
 - *"My car was parked in my driveway during a hailstorm... hood, roof, and
