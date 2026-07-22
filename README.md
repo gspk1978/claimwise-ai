@@ -5,12 +5,10 @@ adjuster quickly understand how an insurance policy applies to a submitted
 claim — grounded strictly in the policy's own text, with explicit
 guardrails against hallucination and unauthorized "final decisions."
 
-Built to showcase a realistic, interview-ready GenAI/RAG architecture:
-**PyPDF → LangChain chunking → OpenAI embeddings → ChromaDB → LangChain
+Built to showcase a near-real GenAI/RAG architecture: **PyPDF → LangChain chunking → OpenAI embeddings → ChromaDB → LangChain
 RAG chain → guardrails → structured JSON → Streamlit UI.**
 
-> ⚠️ **This is a demo/portfolio project, not a certified claims system.**
-> All outputs are explicitly non-binding and require human adjuster review.
+> ⚠️ **Please note that this is a demo/portfolio project, not a certified claims system.**
 
 ---
 
@@ -53,7 +51,7 @@ RAG chain → guardrails → structured JSON → Streamlit UI.**
   layers and centralized logging
 - Bundled sample policies (auto + homeowners) and sample historical claims
 
-**Bonus:**
+**Additional Features added to showcase AI capabilities :**
 - Fraud risk scoring (heuristic, LLM-based text pattern screening)
 - Similar historical claims retrieval (its own Chroma collection)
 - Simple multi-agent coordinator pattern (coverage / fraud / historical
@@ -151,6 +149,8 @@ claimwise-ai/
 
 ## Setup Instructions
 
+- Please note that instructions use the Python i.e. 'py' as the main interpreter. This means the commands involving 'pip' or 'streamlit' etc are run with the 'py' as the interpreter. This was followed as this is the commonly recommended pattern in official Python docs specifically to avoid the interpreter-mismatch problem
+
 ### 1. Prerequisites
 - Python 3.11 or 3.12
 - An OpenAI API key ([platform.openai.com](https://platform.openai.com))
@@ -182,12 +182,13 @@ defaults for a local demo.
 Sample PDFs are already included under `data/sample_policies/`, but you can
 regenerate them any time:
 ```bash
-python scripts/generate_sample_policies.py
+py scripts/generate_sample_policies.py
 ```
 
 ### 7. Run the app
 ```bash
 streamlit run app.py
+OR
 py -m streamlit run app.py
 ```
 Then open the URL Streamlit prints (typically `http://localhost:8501`).
@@ -237,7 +238,7 @@ Then open the URL Streamlit prints (typically `http://localhost:8501`).
 
 ---
 
-## Bonus Features
+## Additional Features
 
 - **Fraud risk scoring** (`src/bonus/fraud_scoring.py`): a separate LLM
   call scores textual red-flag patterns (vague timelines, high-value items
@@ -274,25 +275,3 @@ valid `OPENAI_API_KEY` in `.env` and is best exercised through the
 Streamlit UI using the bundled sample policies and sample claims.
 
 ---
-
-## Design Notes / Interview Talking Points
-
-- **Grounding is enforced twice**: once via prompt instructions (soft) and
-  once via deterministic post-hoc guardrails (hard) — a realistic pattern
-  for any regulated-adjacent GenAI product, since prompting alone is not
-  reliable enough on its own.
-- **Chunking is section-aware, not naive fixed-size**: a regex first tries
-  to detect real policy clause boundaries ("Section 4: Exclusions", "4.1
-  ..."), and only falls back to `RecursiveCharacterTextSplitter` for
-  oversized sections — reducing the chance of splitting a clause mid-
-  sentence and losing its meaning.
-- **Every chunk carries full provenance** (source file, page number,
-  section title, unique `chunk_id`), which flows all the way through
-  retrieval → prompt → LLM output → UI, enabling real citations instead of
-  black-box answers.
-- **Ingestion and RAG are cleanly separated modules** so each could scale,
-  be tested, or be swapped independently (e.g. swapping ChromaDB for
-  Pinecone/pgvector would only touch `src/vectorstore/`).
-- **The multi-agent pattern is intentionally simple** (a coordinator
-  function, not a heavyweight agent framework) — appropriate for an MVP,
-  while still demonstrating the core idea of specialist decomposition.

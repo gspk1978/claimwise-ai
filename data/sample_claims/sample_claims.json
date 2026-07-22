@@ -54,5 +54,82 @@
     "description": "Someone broke into my home while I was away and stole jewelry I recently appraised at $45,000, but I don't have receipts and there's no police report yet because I wanted to check with insurance first.",
     "outcome": "Under investigation",
     "resolution_notes": "Missing police report and lack of proof of ownership for high-value items flagged for further investigation before payout consideration. Policyholder advised to file police report immediately."
+  },
+  {
+    "claim_id": "CLM-1009",
+    "claim_type": "Health - Pre-existing Condition",
+    "description": "I was diagnosed with a knee condition two months before my policy started, and now I need surgery for it. I'm submitting a claim to cover the surgery cost.",
+    "outcome": "Denied",
+    "resolution_notes": "Treatment falls within the pre-existing condition waiting period defined in the policy. Claim excluded until the waiting period is satisfied."
+  },
+  {
+    "claim_id": "CLM-1010",
+    "claim_type": "Health - Missing Prior Authorization",
+    "description": "I had an MRI done for back pain last week at a specialist's recommendation, but I didn't realize I needed pre-approval from my insurer first.",
+    "outcome": "Denied, resubmission possible",
+    "resolution_notes": "Non-emergency imaging requires prior authorization per policy terms. Claim denied for missing authorization; policyholder advised to resubmit with retroactive authorization request."
+  },
+  {
+    "claim_id": "CLM-1011",
+    "claim_type": "Renters - Roommate Theft",
+    "description": "My roommate's friend stole my laptop and headphones during a party at our apartment. I don't have a police report yet but I know who did it.",
+    "outcome": "Under investigation",
+    "resolution_notes": "Theft by a known, identifiable individual requires a police report before payout consideration. Policyholder advised to file a report to proceed."
+  },
+  {
+    "claim_id": "CLM-1012",
+    "claim_type": "Renters - Water Damage",
+    "description": "A pipe under my kitchen sink leaked overnight and damaged my area rug and some electronics stored on the floor nearby.",
+    "outcome": "Approved",
+    "resolution_notes": "Sudden and accidental water discharge from plumbing is a covered peril under personal property coverage. Deductible applied."
+  },
+  {
+    "claim_id": "CLM-1013",
+    "claim_type": "Renters - Business Property Exclusion",
+    "description": "I run a small jewelry-making business from my apartment and someone broke into my storage unit, stealing about $6,000 worth of tools and inventory.",
+    "outcome": "Denied",
+    "resolution_notes": "Business property and inventory used for commercial purposes are excluded under the standard renters policy. Policyholder advised to obtain a business property/inland marine policy."
+  },
+  {
+    "claim_id": "CLM-1014",
+    "claim_type": "Travel - Trip Cancellation",
+    "description": "I had to cancel my international trip two days before departure because I came down with the flu and my doctor advised against flying.",
+    "outcome": "Approved",
+    "resolution_notes": "Trip cancellation due to documented illness of the traveler is a covered reason under trip cancellation coverage. Medical documentation from treating physician required and provided."
+  },
+  {
+    "claim_id": "CLM-1015",
+    "claim_type": "Travel - Lost Baggage",
+    "description": "The airline lost my checked bag on a connecting flight and it still hasn't been located after 10 days. It contained clothing and a camera worth about $900 total.",
+    "outcome": "Approved with conditions",
+    "resolution_notes": "Baggage loss covered subject to per-item sub-limits; camera reimbursement capped per the policy's electronics sub-limit. Airline's own baggage settlement deducted from payout to avoid duplicate recovery."
+  },
+  {
+    "claim_id": "CLM-1016",
+    "claim_type": "Travel - Emergency Medical Abroad",
+    "description": "I broke my ankle while hiking in Portugal and needed emergency treatment and a cast at a local hospital. I paid out of pocket and am submitting for reimbursement.",
+    "outcome": "Approved",
+    "resolution_notes": "Emergency medical treatment abroad for an accidental injury is covered under emergency medical coverage. Itemized hospital invoice and proof of payment required and provided."
+  },
+  {
+    "claim_id": "CLM-1017",
+    "claim_type": "Travel - Extreme Sports Exclusion",
+    "description": "I was injured while paragliding during my vacation and had to be treated at a local clinic. I'm submitting the medical bills for reimbursement.",
+    "outcome": "Denied",
+    "resolution_notes": "Paragliding falls under the policy's extreme/adventure sports exclusion. Coverage would require a separate adventure sports endorsement, which was not purchased."
+  },
+  {
+    "claim_id": "CLM-1018",
+    "claim_type": "Auto - Rideshare Use Exclusion",
+    "description": "I was in an accident while I had my rideshare app on and was on my way to pick up a passenger. The other driver ran a red light.",
+    "outcome": "Denied under personal policy",
+    "resolution_notes": "Vehicle use for ridesharing purposes is excluded under the standard personal auto policy absent a rideshare endorsement. Claim referred to the rideshare company's commercial policy for the period in question."
+  },
+  {
+    "claim_id": "CLM-1019",
+    "claim_type": "Home - Sewer Backup",
+    "description": "Heavy rain caused the main sewer line to back up into our basement through the floor drain, damaging the carpet and some stored belongings.",
+    "outcome": "Denied",
+    "resolution_notes": "Sewer and drain backup is excluded under the base policy unless a Water Backup Endorsement is attached. Policyholder's declarations page confirmed no such endorsement was purchased."
   }
 ]

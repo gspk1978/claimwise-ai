@@ -1,9 +1,11 @@
 """
 generate_sample_policies.py
 ----------------------------
-One-off utility script to generate two demo insurance policy PDFs
-(auto + homeowners) with realistic section structure, so the app has
-ready-to-use sample data for testing/demo purposes.
+One-off utility script to generate demo insurance policy PDFs with
+realistic section structure, so the app has ready-to-use sample data for
+testing/demo purposes.
+
+Generates 5 policies: Auto, Homeowners, Health, Renters, and Travel.
 
 Run with: python scripts/generate_sample_policies.py
 """
@@ -83,6 +85,12 @@ auto_sections = [
         "4.1 Unlicensed or Unauthorized Driver Exclusion: Any claim arising from an accident "
         "where the vehicle was being operated by a person without a valid license, or without "
         "the express permission of the policyholder, is excluded from coverage under this policy.",
+        "4.2 Rideshare and Commercial Use Exclusion: Loss occurring while the Insured Vehicle is "
+        "being used to transport passengers or goods for compensation, including while a "
+        "rideshare application is active and awaiting or en route to a passenger pickup, is "
+        "excluded unless a Rideshare Endorsement has been purchased and is shown on the "
+        "Declarations Page. Such claims should be directed to the applicable commercial or "
+        "rideshare company policy in effect at the time of loss.",
     ]),
     ("Section 5: Theft Claims", [
         "In the event of theft of the Insured Vehicle, the policyholder must file a police report "
@@ -148,6 +156,9 @@ home_sections = [
         "3.2 Delayed Discovery / Mold Exclusion: If water damage is not discovered and reported "
         "within a reasonable time (generally within 7 days of the event or the policyholder's "
         "return to the property), resulting mold remediation costs may be excluded or limited.",
+        "3.3 Sewer and Drain Backup Exclusion: Loss caused by water or waterborne material which "
+        "backs up through sewers or drains, or which overflows from a sump pump, is excluded "
+        "unless a Water Backup Endorsement is shown on the Declarations Page.",
     ]),
     ("Section 4: Theft and High-Value Items", [
         "Coverage for theft of jewelry, watches, and furs is limited to $2,500 per occurrence "
@@ -178,4 +189,206 @@ home_sections = [
 
 build_pdf("home_policy_sample.pdf", "Sample Homeowners Insurance Policy - ClaimWise Demo", home_sections)
 
-print("Sample policy PDFs generated successfully.")
+
+# ---------------------------------------------------------------------------
+# HEALTH INSURANCE POLICY
+# ---------------------------------------------------------------------------
+health_sections = [
+    ("Section 1: Definitions", [
+        "\"Medically Necessary\" means a service or supply required to diagnose or treat an "
+        "illness, injury, condition, or symptoms in accordance with generally accepted standards "
+        "of medical practice.",
+        "\"Prior Authorization\" means advance approval from us that a service, procedure, or "
+        "prescription meets policy requirements for coverage before it is performed or filled.",
+        "\"Pre-existing Condition\" means any illness, injury, or condition for which the "
+        "policyholder received diagnosis, treatment, or medical advice prior to the policy's "
+        "effective date.",
+    ]),
+    ("Section 2: Covered Services", [
+        "This policy covers Medically Necessary services including: physician office visits; "
+        "emergency room and urgent care visits; hospitalization; diagnostic imaging and "
+        "laboratory testing; prescription medications listed on the covered formulary; "
+        "outpatient surgery; and mental health and substance use treatment at parity with "
+        "medical/surgical benefits.",
+        "Emergency room visits are covered under the prudent layperson standard: coverage "
+        "applies whenever a reasonable person could have believed that symptoms constituted an "
+        "emergency, regardless of the final diagnosis.",
+    ]),
+    ("Section 3: Exclusions", [
+        "This policy does NOT cover: (a) cosmetic or elective procedures not related to a "
+        "Medically Necessary diagnosis, including elective cosmetic surgery such as rhinoplasty "
+        "performed for appearance rather than functional/medical reasons; (b) experimental or "
+        "investigational treatments not approved by the relevant regulatory body; (c) services "
+        "received without required Prior Authorization, except in a documented emergency; "
+        "(d) treatment for a Pre-existing Condition during the applicable waiting period defined "
+        "in Section 4; (e) services rendered by an out-of-network provider without prior approval, "
+        "except in an emergency.",
+        "3.1 Cosmetic Procedure Exclusion: Procedures performed primarily to improve appearance "
+        "rather than to restore bodily function or treat a diagnosed medical condition are "
+        "excluded from coverage, regardless of provider recommendation.",
+    ]),
+    ("Section 4: Pre-existing Condition Waiting Period", [
+        "Claims related to a Pre-existing Condition are excluded from coverage for the first 90 "
+        "days following the policy's effective date. After the waiting period has elapsed, "
+        "treatment for the condition becomes eligible for coverage subject to all other policy "
+        "terms.",
+    ]),
+    ("Section 5: Prior Authorization Requirements", [
+        "The following services require Prior Authorization before being performed: non-emergency "
+        "diagnostic imaging (MRI, CT scan, PET scan); elective inpatient admissions; certain "
+        "specialty prescription medications; and out-of-network referrals. Claims for these "
+        "services submitted without a valid Prior Authorization on file may be denied, though "
+        "policyholders may request retroactive authorization with supporting medical "
+        "documentation.",
+    ]),
+    ("Section 6: Required Documentation for Claims", [
+        "To process a claim, the policyholder must submit: (1) an itemized bill or superbill from "
+        "the treating provider; (2) proof of payment if reimbursement is being requested; "
+        "(3) applicable Prior Authorization confirmation number, if required; and (4) a physician's "
+        "note or referral for specialist or diagnostic services.",
+    ]),
+    ("Section 7: Claims Process", [
+        "Upon receiving a completed claim submission, a claims examiner will review the "
+        "documentation against the covered services and exclusions listed in this policy and "
+        "will issue a coverage determination within 30 calendar days. This determination is "
+        "preliminary and subject to further review by a licensed claims adjuster or medical "
+        "director before final payment or denial is issued.",
+    ]),
+    ("Section 8: Deductibles and Copays", [
+        "The annual deductible, copay amounts per service type, and out-of-pocket maximum are "
+        "shown on the Declarations Page and apply before or alongside coverage as indicated.",
+    ]),
+]
+
+build_pdf("health_policy_sample.pdf", "Sample Health Insurance Policy - ClaimWise Demo", health_sections)
+
+
+# ---------------------------------------------------------------------------
+# RENTERS INSURANCE POLICY
+# ---------------------------------------------------------------------------
+renters_sections = [
+    ("Section 1: Definitions", [
+        "\"Personal Property\" means the policyholder's owned belongings located within the "
+        "rented residence identified on the Declarations Page.",
+        "\"Business Property\" means inventory, tools, equipment, or supplies used in connection "
+        "with a trade, profession, or business, whether operated from the residence or elsewhere.",
+        "\"Liability Coverage\" means coverage for the policyholder's legal responsibility for "
+        "bodily injury or property damage to others.",
+    ]),
+    ("Section 2: Covered Perils - Personal Property", [
+        "This policy covers direct physical loss to Personal Property caused by: fire or "
+        "lightning; theft or attempted theft; vandalism; windstorm or hail; explosion; smoke; "
+        "and sudden and accidental discharge or overflow of water from plumbing, heating, or "
+        "household appliances within the residence.",
+    ]),
+    ("Section 3: Liability Coverage", [
+        "This policy provides Liability Coverage for bodily injury or property damage "
+        "unintentionally caused by the policyholder or a resident household member to a third "
+        "party, up to the limit shown on the Declarations Page, including associated legal "
+        "defense costs.",
+    ]),
+    ("Section 4: Exclusions", [
+        "This policy does NOT cover: (a) Business Property or business-related inventory, "
+        "equipment, or losses, regardless of where stored, unless a Business Property "
+        "Endorsement is attached; (b) flood, surface water, or earth movement including "
+        "earthquake; (c) theft or loss of property left unattended in a common or shared area "
+        "without a filed police report; (d) bed bug, pest, or vermin infestation damage; "
+        "(e) intentional acts by the policyholder or a resident household member; (f) damage to "
+        "the physical structure of the building itself, which remains the landlord's "
+        "responsibility and insurance obligation.",
+        "4.1 Business Property Exclusion: Tools, inventory, or equipment used for a trade, side "
+        "business, or profession are excluded from Personal Property coverage regardless of "
+        "storage location, including storage units. A separate business property or inland "
+        "marine policy is required for such items.",
+        "4.2 Unattended/Unreported Theft: Theft claims involving property left in a shared, "
+        "common, or otherwise unattended area require a police report identifying the "
+        "circumstances of the loss before any payment will be considered, particularly where the "
+        "responsible party is known or suspected.",
+    ]),
+    ("Section 5: Required Documentation for Claims", [
+        "To process a claim, the policyholder must submit: (1) a completed claim form; "
+        "(2) a police report for theft or vandalism claims; (3) an inventory of damaged or "
+        "stolen items with estimated replacement values and, where available, receipts or "
+        "photographs; and (4) a written statement describing how the loss occurred.",
+    ]),
+    ("Section 6: Claims Process", [
+        "Upon receiving a completed claim submission, a claims adjuster will review the "
+        "documentation and issue a coverage determination within 15 business days. All coverage "
+        "determinations are preliminary until confirmed by a licensed human adjuster.",
+    ]),
+    ("Section 7: Deductibles", [
+        "The Personal Property deductible is shown on the Declarations Page and is subtracted "
+        "from the covered loss amount prior to payment. Liability Coverage is not subject to a "
+        "deductible.",
+    ]),
+]
+
+build_pdf("renters_policy_sample.pdf", "Sample Renters Insurance Policy - ClaimWise Demo", renters_sections)
+
+
+# ---------------------------------------------------------------------------
+# TRAVEL INSURANCE POLICY
+# ---------------------------------------------------------------------------
+travel_sections = [
+    ("Section 1: Definitions", [
+        "\"Trip\" means the covered travel itinerary identified on the Declarations Page, "
+        "beginning on the scheduled departure date and ending on the scheduled return date.",
+        "\"Covered Reason\" means an event specifically listed in Section 2 that permits Trip "
+        "Cancellation or Trip Interruption benefits.",
+        "\"Emergency Medical Treatment\" means treatment required for a sudden and unforeseen "
+        "illness or injury occurring during the Trip.",
+    ]),
+    ("Section 2: Trip Cancellation and Interruption Coverage", [
+        "This policy reimburses prepaid, non-refundable trip costs if the Trip is cancelled or "
+        "interrupted for a Covered Reason, including: documented illness or injury of the "
+        "traveler or a family member that a physician certifies makes travel inadvisable; death "
+        "of the traveler or a family member; a natural disaster making the destination "
+        "uninhabitable; and involuntary job loss of the traveler occurring after the policy was "
+        "purchased.",
+    ]),
+    ("Section 3: Emergency Medical and Evacuation Coverage", [
+        "This policy covers Emergency Medical Treatment received during the Trip, including "
+        "hospital, physician, and prescription costs arising from a sudden illness or accidental "
+        "injury, up to the limit shown on the Declarations Page. Emergency medical evacuation to "
+        "the nearest adequate medical facility, or repatriation, is covered when certified as "
+        "medically necessary by the treating physician.",
+    ]),
+    ("Section 4: Baggage and Personal Effects Coverage", [
+        "This policy reimburses the policyholder for baggage or personal effects that are lost, "
+        "stolen, or damaged by a common carrier during the Trip, subject to a per-item sub-limit "
+        "shown on the Declarations Page. Any settlement received directly from the airline or "
+        "common carrier for the same loss will be deducted from the amount payable under this "
+        "policy to prevent duplicate recovery.",
+    ]),
+    ("Section 5: Exclusions", [
+        "This policy does NOT cover: (a) treatment or complications arising from a Pre-existing "
+        "Condition unless a Pre-existing Condition Waiver was purchased within the required "
+        "timeframe after initial trip deposit; (b) injury or loss arising from participation in "
+        "extreme or adventure sports, including but not limited to paragliding, skydiving, "
+        "scuba diving beyond recreational certification limits, and mountaineering, unless an "
+        "Adventure Sports Endorsement is attached; (c) cancellation due to a general fear of "
+        "travel or a change of mind not tied to a Covered Reason (\"cancel for any reason\" "
+        "coverage is only available if separately purchased and shown on the Declarations Page); "
+        "(d) losses resulting from the policyholder's intoxication or illegal activity.",
+        "5.1 Extreme Sports Exclusion: Injuries sustained while participating in extreme or "
+        "adventure sports activities are excluded from Emergency Medical coverage unless the "
+        "Adventure Sports Endorsement was purchased and is reflected on the Declarations Page.",
+    ]),
+    ("Section 6: Required Documentation for Claims", [
+        "To process a claim, the policyholder must submit: (1) a completed claim form; "
+        "(2) proof of the Trip cost and cancellation/interruption circumstances (e.g. physician's "
+        "note, death certificate, airline documentation); (3) itemized medical bills and proof of "
+        "payment for medical claims; and (4) a property irregularity report (PIR) from the "
+        "airline and any settlement documentation for baggage claims.",
+    ]),
+    ("Section 7: Claims Process", [
+        "Upon receiving a completed claim submission, a claims examiner will review the "
+        "documentation and issue a coverage determination within 20 business days. All coverage "
+        "determinations are preliminary and subject to confirmation by a licensed human claims "
+        "adjuster before final payment.",
+    ]),
+]
+
+build_pdf("travel_policy_sample.pdf", "Sample Travel Insurance Policy - ClaimWise Demo", travel_sections)
+
+print("Sample policy PDFs generated successfully (5 policies: auto, home, health, renters, travel).")
