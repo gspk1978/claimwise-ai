@@ -10,6 +10,11 @@ RAG chain → guardrails → structured JSON → Streamlit UI.**
 
 > ⚠️ **Please note that this is a demo/portfolio project, not a certified claims system.**
 
+## Additional Documentation
+
+- [Business Overview](./BUSINESS_OVERVIEW.md) — business background, problem statement, and use cases
+- [Technical Walkthrough](./TECHNICAL_WALKTHROUGH.md) — code-level flow for each use case
+
 ---
 
 ## Table of Contents
